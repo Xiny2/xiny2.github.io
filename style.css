@@ -1,0 +1,88 @@
+/*img*/
+#imgh{
+    width:50%;
+}
+.col-md-3 img{
+    width:100%;
+    filter: opacity(45%) grayscale(70%);
+    margin: 10px;
+}
+
+@keyframes filter {
+    from {
+        filter: opacity(50%) grayscale(70%);
+    }
+    
+    to {
+        filter: opacity(100%) grayscale(0%);
+    }
+}
+.col-md-3 img:hover{
+    animation: filter 0.5s forwards;
+}
+.text{
+    font-size: 20px;
+    font-family: Lucida Calligraphy;
+    color: #0B3A5A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.col-md-3:hover .text{
+    display: none;
+}
+
+/*content*/
+
+body{
+    background-image:url("https://scontent.fyvr1-1.fna.fbcdn.net/v/t1.0-9/28783727_547686412279093_6754884049275191296_n.jpg?oh=db470875102d99e794bb878caa74e6d0&oe=5B017C1A");
+    background-size: cover;
+}
+
+/*header*/
+.page-header{
+    font-family: Showcard Gothic;
+    font-size: 40px;
+    padding: 5px;
+}
+
+/*nav*/
+.nav{
+    font-family: Century Gothic;
+}
+
+/*content*/
+p{
+    font-family: Century Gothic;
+    font-size: 15px;
+}
+    
+#a{
+    color: #003355;
+}
+#b{
+    color: #004466;
+}
+#c{
+    color: #005577;
+}
+#d{
+    color: #006688;
+}
+#e{
+    color: #0077b3;
+}
+#f{
+    color: #0088cc;
+}
+#g{
+    color: #0099e6;
+}
+
+/*footer*/
+.footer p{
+    font-size: 10px;
+    text-align: right;
+}
