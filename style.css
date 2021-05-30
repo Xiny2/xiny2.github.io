@@ -9,7 +9,7 @@
     width:50%;
     border-radius: 50%;
 }
-.col-md-2 img{
+.col-sm-2 img{
     width:100%;
     filter: opacity(45%) grayscale(70%);
     margin: 10px 5px 0px 5px;
@@ -24,7 +24,7 @@
         filter: opacity(100%) grayscale(0%);
     }
 }
-.col-md-2 img:hover{
+.col-sm-2 img:hover{
     animation: filter 0.5s forwards;
 }
 .text{
@@ -38,7 +38,7 @@
     z-index: 1;
     text-align: center;
 }
-.col-md-2:hover .text{
+.col-sm-2:hover .text{
     display: none;
 }
 
