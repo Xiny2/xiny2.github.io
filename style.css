@@ -3,16 +3,62 @@
   margin:0;
 }
 
+.popText{
+  font-family: Century Gothic;
+  font-size: 15px;
+  color: #003355;
+  border-bottom: 1px dotted rgba(82, 122, 122, 0.7);
+  line-height: 2;
+}
+
+.popImg{
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(82, 122, 122, 0.7);
+  padding: 3px;
+  position: absolute;
+  visibility: hidden;
+}
+
+#qzImg1, #vanImg1, #torontoImg1{
+  right: 3%
+}
+
+#qzImg2, #vanImg2, #torontoImg2{
+  bottom: 105%;
+  left: 3%
+}
 
 /*img*/
 #imgh{
-    width:50%;
+    width:30%;
     border-radius: 50%;
+    border: 1px solid rgba(82, 122, 122, 0.7);
+    padding: 3px;
 }
-.col-sm-2 img{
+
+
+#quanzhou:hover #qzImg img{
+  visibility: visible;
+}
+#van:hover #vanImg img{
+  visibility: visible;
+}
+#toronto:hover #torontoImg img{
+  visibility: visible;
+}
+
+#quanzhou, #van, #toronto{
+  position: relative;
+}
+
+
+.col-sm-2 img, .col-md-3 img{
     width:100%;
+    border: 1px solid #ddd;
+    padding: 2px;
     filter: opacity(45%) grayscale(70%);
-    margin: 10px 5px 0px 5px;
+    margin: 10px;
 }
 
 @keyframes filter {
@@ -24,8 +70,9 @@
         filter: opacity(100%) grayscale(0%);
     }
 }
-.col-sm-2 img:hover{
+.col-sm-2 img:hover, .col-md-3 img:hover{
     animation: filter 0.5s forwards;
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 .text{
     font-size: 15px;
@@ -38,7 +85,7 @@
     z-index: 1;
     text-align: center;
 }
-.col-sm-2:hover .text{
+.col-sm-2:hover, .col-md-3:hover .text{
     display: none;
 }
 
@@ -98,10 +145,20 @@ body{
 }
 
 
+
 /*content*/
 p{
     font-family: Century Gothic;
     font-size: 15px;
+    color: #003355;
+}
+h3{
+  font-family: Century Gothic;
+  color: #005577;
+}
+h4{
+  font-family: Century Gothic;
+  color: #0077b3;
 }
     
 #a{
@@ -125,6 +182,134 @@ p{
 #g{
     color: #0099e6;
 }
+
+
+/*images slider*/
+ /*credit to https://tympanus.net/codrops/2012/06/06/image-accordion-with-css3/*/
+.ia-container{
+  margin: 20px auto;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px rgba(82, 122, 122, 0.7);
+  border: 7px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+}
+
+#candyJar{
+  width: 485px;
+}
+#lotus{
+  width: 635px;
+}
+#threads{
+  width: 385px;
+}
+#hometown{
+  width: 685px;
+}
+#blue{
+  width: 535px;
+}
+
+
+.ia-container figure {
+  position: absolute;
+    top: 0;
+    left: 50px; /* width of visible piece */
+    width: 335px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.ia-container > figure {
+  position: relative;
+  left: 0 !important;
+}
+
+.ia-container img {
+	display: block;
+	width: 100%;
+}
+
+.ia-container input { /*radio button*/
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px; /* just cover visible part */
+    height: 100%;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+  opacity: 0;
+	z-index: 100;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.ia-container input:checked{
+	width: 5px;
+	left: auto;
+	right: 0px;
+}
+
+.ia-container input:checked ~ figure {
+  left: 335px;
+  transition: all 0.7s ease-in-out;
+}
+
+.ia-container figcaption{
+  position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+	background: rgba(87, 73, 81, 0.3);
+  transition: all 0.2s linear;
+}
+
+.ia-container figcaption span {
+	position: absolute;
+    top: 40%;
+    margin-top: -30px;
+    right: 20px;
+    left: 20px;
+	overflow: hidden;
+	text-align: center;
+	background: rgba(82, 122, 122, 0.3);
+	line-height: 20px;
+	font-size: 18px;
+  opacity: 0;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: 700;
+	padding: 20px;
+	color: #FFFF;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  border-radius: 5px;
+
+} 
+
+.ia-container input:checked + figcaption,
+.ia-container input:checked:hover + figcaption{
+	background: rgba(87, 73, 81, 0);
+}
+
+.ia-container input:checked + figcaption span {
+  transition: all 0.4s ease-in-out 0.5s;
+	opacity: 1;
+	top: 50%;
+}
+
+.ia-container input:hover + figcaption {
+	background: rgba(87, 73, 81, 0.05);
+}
+
+.ia-container input:checked ~ figure input{
+    z-index: 1;
+}
+
+
+/*^^^^credit*/
 
 /*footer*/
 .footer p{
